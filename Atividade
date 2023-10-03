@@ -1,0 +1,49 @@
+"""
+Crie uma classe chamada Carro que represente diferentes carros em uma revendedora de automóveis. A classe deve ter os seguintes atributos e métodos:
+Atributos:
+marca: Representa a marca do carro (por exemplo, Toyota, Ford, BMW, etc.).
+modelo: Representa o modelo específico do carro.
+ano: Representa o ano de fabricação do carro.
+preco: Representa o preço do carro.
+vendido: Um valor booleano que indica se o carro foi vendido ou não. Por padrão, todos os carros são considerados não vendidos.
+
+Métodos:
+exibir_informacoes(): Mostra todas as informações sobre o carro.
+vender(): Marca o carro como vendido.
+ajustar_preco(novo_preco): Ajusta o preço do carro para o valor especificado.
+
+Instancie pelo menos 5 objetos.
+"""
+
+class Carro:
+    def __init__(self, marca, modelo, ano, preco):
+        self.marca = marca
+        self.modelo = modelo
+        self.ano = ano
+        self.preco = preco
+        self.vendido = False
+
+    def exibir_informacoes(self):
+        print(f"Marca: {self.marca}")
+        print(f"Modelo: {self.modelo}")
+        print(f"Ano: {self.ano}")
+        print(f"Preço: R${self.preco}")
+        print(f"Vendido: {'Sim' if self.vendido else 'Não'}")
+
+    def vender(self):
+        self.vendido = True
+
+    def ajustar_preco(self, novo_preco):
+        self.preco = novo_preco
+
+# Exemplo de carros
+car1 = Carro("Toyota", "Camry", 2022, 25000)
+car2 = Carro("Ford", "Mustang", 2023, 45000)
+car3 = Carro("BMW", "X5", 2021, 60000)
+car4 = Carro("Honda", "Civic", 2022, 22000)
+car5 = Carro("Chevrolet", "Equinox", 2023, 35000)
+
+# Examplo
+car1.exibir_informacoes()
+car1.ajustar_preco(23000)
+car2.vender()
